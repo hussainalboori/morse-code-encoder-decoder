@@ -1,16 +1,18 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strings"
 )
 
 var morseCode = map[string]string{
-	".-":   "A", "-...": "B", "-.-.": "C", "-..":  "D", ".":    "E",
-	"..-.": "F", "--.":  "G", "....": "H", "..":   "I", ".---": "J",
-	"-.-":  "K", ".-..": "L", "--":   "M", "-.":   "N", "---":  "O",
-	".--.": "P", "--.-": "Q", ".-.":  "R", "...":  "S", "-":    "T",
-	"..-":  "U", "...-": "V", ".--":  "W", "-..-": "X", "-.--": "Y",
+	".-": "A", "-...": "B", "-.-.": "C", "-..": "D", ".": "E",
+	"..-.": "F", "--.": "G", "....": "H", "..": "I", ".---": "J",
+	"-.-": "K", ".-..": "L", "--": "M", "-.": "N", "---": "O",
+	".--.": "P", "--.-": "Q", ".-.": "R", "...": "S", "-": "T",
+	"..-": "U", "...-": "V", ".--": "W", "-..-": "X", "-.--": "Y",
 	"--..": "Z", ".----": "1", "..---": "2", "...--": "3", "....-": "4",
 	".....": "5", "-....": "6", "--...": "7", "---..": "8", "----.": "9",
 	"-----": "0", "/": " ",
@@ -41,13 +43,20 @@ func isMorseCode(input string) bool {
 	return true
 }
 
-func main(){
-	var morseCodeInpout string = "gg gg"
-	// fmt.Println("enter the massge you want to encode or decode:")
-	// fmt.Scan(&morseCodeInpout)
-	messge := encodeMorseCode(morseCodeInpout)
-	fmt.Println(messge)
-	//fmt.Println(morseCodeInpout)
+func main() {
+	//result := ""
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println("entar the line you wnat to translate: ")
+	inpout, _ := reader.ReadString('\n')
+	inpout = strings.TrimSpace(inpout)
+	text := isMorseCode(inpout)
+	if text == true {
+		result := decodeMorseCode(inpout)
+		fmt.Println(result)
+	} else {
+		result := encodeMorseCode(inpout)
+		fmt.Println(result)
+	}
 }
 
 func decodeMorseCode(code string) string {
@@ -68,7 +77,7 @@ func decodeMorseCode(code string) string {
 	return decodedMessage
 }
 
-func encodeMorseCode(text string) string{
+func encodeMorseCode(text string) string {
 	text = strings.ToUpper(text)
 	encodedMessage := ""
 
