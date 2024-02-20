@@ -66,4 +66,4 @@ Special thanks to [MSK17A](https://github.com/MSK17A/morse_code_decoder) for ins
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvement, please create a pull request or submit an issue in the [GitHub repository](https://github.com/your-username/morse-code-translator).
+Contributions are welcome! If you find any issues or have suggestions for improvement, please create a pull request or submit an issue in the [GitHub repository](https://github.com/hussainalboori/morse-code-encoder-decoder.git).
