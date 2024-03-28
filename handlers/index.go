@@ -3,7 +3,7 @@ package handlers
 import (
 	"html/template"
 	"log"
-	"morse-code/code"
+	decode "morse-code/Decode"
 	"net/http"
 )
 
@@ -17,7 +17,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Internal server error", http.StatusInternalServerError)
 		return
 	}
-	morseCode := code.EncodeMorseCode(text)
+	morseCode := decode.DecodeMorseCode(text)
 	template.Execute(w, morseCode)
 	log.Println(morseCode)
 
