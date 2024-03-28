@@ -28,9 +28,14 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	
 	err = template.Execute(w, Data)
 	if err != nil {
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		log.Println("Error executing template:", err)
-		http.Error(w, "Internal server error", http.StatusInternalServerError)
+		errTemplate, err := template.ParseFiles("templates/err500.html")
+		if err != nil {
+			log.Println("Error parsing error template:", err)
+			return
+		}
+		errTemplate.Execute(w, nil)
 		return
 	}
-	
 }

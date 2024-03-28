@@ -5,17 +5,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Morse Code Encoder/Decoder</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <h1>Morse Code Encoder/Decoder</h1>
+    <div class="body-contioner">
+        <h1>Morse Code Encoder/Decoder</h1>
     
-    <form action="/" method="POST">
-        <label for="text">Enter Text or Morse Code:</label><br>
-        <input type="text" id="text" name="text"><br><br>
-        <input type="submit" value="Submit">
-    </form>
+        <form action="/" method="POST">
+            <label class="text-inpout-label" for="text">Enter Text or Morse Code:</label><br>
+            <input class="text-inpout" type="text" id="text" name="text">
+            <input class="button" type="submit" value="Submit">
+        </form>
     
-    <h2>Result:</h2>
-    <p>{{.}}</p>
+        <h2>Result:</h2>
+        <p>{{.}}</p>
+    </div>
 </body>
 </html>
