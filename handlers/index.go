@@ -4,6 +4,8 @@ import (
 	"html/template"
 	"log"
 	decode "morse-code/Decode"
+	encoder "morse-code/Encoder"
+	checkdata "morse-code/checkData"
 	"net/http"
 )
 
@@ -17,11 +19,18 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Internal server error", http.StatusInternalServerError)
 		return
 	}
-	morseCode := decode.DecodeMorseCode(text)
-	template.Execute(w, morseCode)
-	log.Println(morseCode)
-
-	// TODO: Encode the text into Morse code
-
-	// TODO: Send the encoded Morse code back to the front end
+	Data := ""
+	if checkdata.IsMorseCode(text) == true {
+		Data = decode.DecodeMorseCode(text)
+	} else {
+		Data = encoder.EncodeMorseCode(text)
+	}
+	
+	err = template.Execute(w, Data)
+	if err != nil {
+		log.Println("Error executing template:", err)
+		http.Error(w, "Internal server error", http.StatusInternalServerError)
+		return
+	}
+	
 }
