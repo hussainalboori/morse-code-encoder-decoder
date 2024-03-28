@@ -32,33 +32,32 @@ go build
 
 ## Usage
 
-1. Enter the line you want to translate when prompted:
+1. You will prompted:
 
 ```bash
-Enter the line you want to translate:
+Connect to our website through http://localhost:<port>
 ```
 
-2. The program will determine if the input is Morse code or regular text. If it is Morse code, it will decode it and display the corresponding text. If it is regular text, it will encode it into Morse code and display the result.
-
+2. Visit the website that you prompted and the it is straight forward
 ## Examples
 
 ### Example 1: Encoding Text to Morse Code
 
 ```
-Enter the line you want to translate: Hello, World!
+Hello, World!
 .... . .-.. .-.. --- --..-- / .-- --- .-. .-.. -.. -.-.-- 
 ```
 
 ### Example 2: Decoding Morse Code to Text
 
 ```
-Enter the line you want to translate: .... . .-.. .-.. --- --..-- / .-- --- .-. .-.. -.. -.-.-- 
+.... . .-.. .-.. --- --..-- / .-- --- .-. .-.. -.. -.-.-- 
 Hello, World!
 ```
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt) file for details.
 
 ## Acknowledgments
 
