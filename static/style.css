@@ -4,20 +4,21 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    background-color: #EFF5F5 ;
 }
 .body-contioner {
-    background-color: #ff0000;
+    background-color: #61677A ;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
     max-width: 100%;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
+
 h1 {
-    color: #fff;
+    color: #EFF5F5;
     text-align: center;
     margin-bottom: 20px;
 }
